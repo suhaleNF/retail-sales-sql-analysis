@@ -4,23 +4,23 @@ Retail Sales Data Analysis Using SQL
 
 Project Overview
 
---This project analyzes retail transaction data using SQL to uncover insights about sales performance, customer purchasing behavior, and product demand.
---The analysis focuses on answering important business questions such as identifying top-selling products, high-value customers, and sales trends.
+This project analyzes retail transaction data using SQL to uncover insights about sales performance, customer purchasing behavior, and product demand.
+The analysis focuses on answering important business questions such as identifying top-selling products, high-value customers, and sales trends.
 
 Dataset Description
 
---The dataset contains retail transaction records with the following fields:
+The dataset contains retail transaction records with the following fields:
 
-Column	Description
+Column	      Description
 
-1.invoice_no =	Unique order number
-2.stock_code	= Product code
-3.description	= Product name
-4.quantity	= Number of items purchased
-5.invoice_date =	Date of purchase
-6.unit_price = 	Price per item
-7.customer_id	= Unique customer identifier
-8.country	= Country where purchase was made
+invoice_no     Unique order number     
+stock_code	   Product code
+description	   Product name
+quantity	      Number of items purchased
+invoice_date 	Date of purchase
+unit_price  	Price per item
+customer_id	   Unique customer identifier
+country	      Country where purchase was made
 
 Business Questions
 
@@ -38,12 +38,12 @@ The analysis aims to answer the following questions:
 
 SQL QUERIES USED
 
-1.TOTAL REVENUE:
+--1.TOTAL REVENUE:
 
 SELECT SUM(quantity * unit_price) AS total_revenue
 FROM retail_sales;
 
-2.TOP 10 PRODUCTS BY QUANTITY SOLD:
+--2.TOP 10 PRODUCTS BY QUANTITY SOLD:
 
 SELECT description, SUM(quantity) AS total_sold
 FROM retail_sales
@@ -51,7 +51,7 @@ GROUP BY description
 ORDER BY total_sold DESC
 LIMIT 10;
 
-3.TOP 10 CUSTOMERS BY SPENDING:
+--3.TOP 10 CUSTOMERS BY SPENDING:
 
 SELECT customer_id, SUM(quantity * unit_price) AS total_spent
 FROM retail_sales
@@ -59,14 +59,14 @@ GROUP BY customer_id
 ORDER BY total_spent DESC
 LIMIT 10;
 
-4.REVENUE BY COUNTRY:
+--4.REVENUE BY COUNTRY:
 
 SELECT country, SUM(quantity * unit_price) AS total_revenue
 FROM retail_sales
 GROUP BY country
 ORDER BY total_revenue DESC;
 
-5.MONTHLY SALES TREND:
+--5.MONTHLY SALES TREND:
 
 SELECT MONTH(invoice_date) AS month,
 SUM(quantity * unit_price) AS monthly_revenue
@@ -74,9 +74,7 @@ FROM retail_sales
 GROUP BY month
 ORDER BY month;
 
-   -------------------------------INSIGHTS------------------------------------
-
-Insights
+#Insights
 
 1.A small number of products contribute significantly to overall sales.
 2.A few customers generate a large portion of the total revenue.
@@ -86,12 +84,24 @@ Insights
 
 SKILLS DEMONSTRATED
 
-1.SQL Data Analysis
-2.Data Aggregation (SUM, COUNT, AVG)
-3.GROUP BY and HAVING analysis
-4.Window Functions (RANK, ROW_NUMBER)
-5.CASE Statements
-6.Business Data Interpretation
+# SQL Data Analysis
+# Data Aggregation (SUM, COUNT, AVG)
+# GROUP BY and HAVING analysis
+# Window Functions (RANK, ROW_NUMBER)
+# CASE Statements
+# Business Data Interpretation
+
+## Dataset Source
+
+The dataset used in this project is the **Online Retail Dataset**, which contains transactional data from a UK-based online retail store.
+
+Source:
+https://archive.ics.uci.edu/ml/datasets/online+retail
+
+
+
+
+
 
 
    
