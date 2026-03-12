@@ -34,46 +34,6 @@ The analysis aims to answer the following questions:
 6.Which orders have the highest value?
 7.What percentage of customers purchase only once?
 
-
-
-SQL QUERIES USED
-
---1.TOTAL REVENUE:
-
-SELECT SUM(quantity * unit_price) AS total_revenue
-FROM retail_sales;
-
---2.TOP 10 PRODUCTS BY QUANTITY SOLD:
-
-SELECT description, SUM(quantity) AS total_sold
-FROM retail_sales
-GROUP BY description
-ORDER BY total_sold DESC
-LIMIT 10;
-
---3.TOP 10 CUSTOMERS BY SPENDING:
-
-SELECT customer_id, SUM(quantity * unit_price) AS total_spent
-FROM retail_sales
-GROUP BY customer_id
-ORDER BY total_spent DESC
-LIMIT 10;
-
---4.REVENUE BY COUNTRY:
-
-SELECT country, SUM(quantity * unit_price) AS total_revenue
-FROM retail_sales
-GROUP BY country
-ORDER BY total_revenue DESC;
-
---5.MONTHLY SALES TREND:
-
-SELECT MONTH(invoice_date) AS month,
-SUM(quantity * unit_price) AS monthly_revenue
-FROM retail_sales
-GROUP BY month
-ORDER BY month;
-
 #Insights
 
 1.A small number of products contribute significantly to overall sales.
