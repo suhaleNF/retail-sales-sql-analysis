@@ -44,12 +44,12 @@ The analysis aims to answer the following questions:
 
 SKILLS DEMONSTRATED
 
-# SQL Data Analysis
-# Data Aggregation (SUM, COUNT, AVG)
-# GROUP BY and HAVING analysis
-# Window Functions (RANK, ROW_NUMBER)
-# CASE Statements
-# Business Data Interpretation
+#SQL Data Analysis
+#Data Aggregation (SUM, COUNT, AVG)
+#GROUP BY and HAVING analysis
+#Window Functions (RANK, ROW_NUMBER)
+#CASE Statements
+#Business Data Interpretation
 
 ## Dataset Source
 
